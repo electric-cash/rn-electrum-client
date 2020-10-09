@@ -10,10 +10,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/BlueWallet/rn-electrum-client.git"
+    "url": "git://github.com/bitcoinvault/rn-electrum-client.git"
   },
   "bugs": {
-    "url": "https://github.com/BlueWallet/rn-electrum-client/issues"
+    "url": "https://github.com/bitcoinvault/rn-electrum-client/issues"
   },
   "keywords": [
     "client",
@@ -24,9 +24,15 @@
     "node": ">=6"
   },
   "contributors": [
-    { "name": "Yuki Akiyama" },
-    { "name": "7kharov" },
-    { "name": "overtorment" }
+    {
+      "name": "Yuki Akiyama"
+    },
+    {
+      "name": "7kharov"
+    },
+    {
+      "name": "overtorment"
+    }
   ],
   "license": "MIT"
 }
