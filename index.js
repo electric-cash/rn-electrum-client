@@ -8,18 +8,17 @@ class ElectrumClient extends Client {
     this.timeLastCall = 0;
   }
 
-  initElectrum(
+  async initElectrum(
     electrumConfig,
     persistencePolicy = { maxRetry: 1000, callback: null }
   ) {
     this.persistencePolicy = persistencePolicy;
     this.electrumConfig = electrumConfig;
     this.timeLastCall = 0;
-    return this.connect().then(() =>
-      this.server_version(
-        this.electrumConfig.client,
-        this.electrumConfig.version
-      )
+    await this.connect();
+    return this.server_version(
+      this.electrumConfig.client,
+      this.electrumConfig.version
     );
   }
 
