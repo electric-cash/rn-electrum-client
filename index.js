@@ -179,11 +179,23 @@ class ElectrumClient extends Client {
       verbose || false,
     ]);
   }
-  blockchainTransaction_getBatch(tx_hash, verbose) {
-    return this.requestBatch("blockchain.transaction.get", tx_hash, verbose);
+  blockchainTransaction_getBatch(tx_hashes_array, verbose) {
+    return this.requestBatch("blockchain.transaction.get", tx_hashes_array, verbose);
   }
   blockchainTransaction_getMerkle(tx_hash, height) {
     return this.request("blockchain.transaction.get_merkle", [tx_hash, height]);
+  }
+  blockchainTransaction_getStake(tx_hash, verbose) {
+    return this.request("blockchain.transaction.get_stake", [
+      tx_hash,
+      verbose || false
+    ]);
+  }
+  blockchainTransaction_getStakeBatch(tx_hashes_array, verbose) {
+    return this.requestBatch("blockchain.transaction.get_stake", tx_hashes_array, verbose);
+  }
+  blockchainStaking_getInfo() {
+    return this.request("blockchain.staking.get_info");
   }
   mempool_getFeeHistogram() {
     return this.request("mempool.get_fee_histogram", []);
