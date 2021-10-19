@@ -185,14 +185,11 @@ class ElectrumClient extends Client {
   blockchainTransaction_getMerkle(tx_hash, height) {
     return this.request("blockchain.transaction.get_merkle", [tx_hash, height]);
   }
-  blockchainTransaction_getStake(tx_hash, verbose) {
-    return this.request("blockchain.transaction.get_stake", [
-      tx_hash,
-      verbose || false
-    ]);
+  blockchainTransaction_getStake(tx_hash) {
+    return this.request("blockchain.transaction.get_stake", tx_hash);
   }
-  blockchainTransaction_getStakeBatch(tx_hashes_array, verbose) {
-    return this.requestBatch("blockchain.transaction.get_stake", tx_hashes_array, verbose);
+  blockchainTransaction_getStakeBatch(tx_hashes_array) {
+    return this.requestBatch("blockchain.transaction.get_stake", tx_hashes_array);
   }
   blockchainStaking_getInfo() {
     return this.request("blockchain.staking.get_info");
