@@ -194,6 +194,9 @@ class ElectrumClient extends Client {
   blockchainStaking_getInfo() {
     return this.request("blockchain.staking.get_info");
   }
+  blockchainStaking_getStakeAwardFreeTxLimit(amount, index) {
+    return this.request("blockchain.staking.calc_free_tx_limit", [amount, index]);
+  }
   blockchain_getFreeTxInfo(address) {
     return this.request("blockchain.get_free_tx_info", address);
   }
