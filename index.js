@@ -200,6 +200,9 @@ class ElectrumClient extends Client {
   blockchain_getFreeTxInfo(address) {
     return this.request("blockchain.get_free_tx_info", [address]);
   }
+  blockchain_getGovernancePower(address) {
+    return this.request("blockchain.get_gov_power", [address]);
+  }
   mempool_getFeeHistogram() {
     return this.request("mempool.get_fee_histogram", []);
   }
